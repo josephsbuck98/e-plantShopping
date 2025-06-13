@@ -274,7 +274,7 @@ function ProductList({ onHomeClick }) {
         console.log(addedToCart);
     }
     
-  const calculateTotalQuantity = () => {
+    const calculateTotalQuantity = () => {
         let totalQuantity = 0;
         for (let item of cart) {
             totalQuantity = totalQuantity + parseFloat(item.quantity);
