@@ -111,6 +111,26 @@ body {
     background-color: #c0392b;
 }
 
+.cart-icon-wrapper {
+  position: relative;
+  display: inline-block;
+}
+
+.cart-count {
+  position: absolute;
+  font-size: 16px;
+  top: 35%;
+  left: 50%;
+  /* transform: translate(-50%, -50%);
+  color: black;
+  font-weight: bold;
+  background-color: white;
+  border-radius: 50%;
+  padding: 4px 8px;
+  font-size: 16px;
+  pointer-events: none;  */
+}
+
 /* Pseudo-elements - Sale badge */
 .product-card::before {
     content: "SALE";
