@@ -4,7 +4,7 @@ import { removeItem, updateQuantity } from './CartSlice';
 import './CartItem.css';
 
 const CartItem = ({ onContinueShopping }) => {
-  const cart = useSelector(state => state.cart.items);
+  const cart = useSelector(state => state.cart.items || []);
   const dispatch = useDispatch();
 
   // Calculate total amount for all products in the cart
@@ -36,7 +36,6 @@ const CartItem = ({ onContinueShopping }) => {
     } else {
       dispatch(removeItem(item.name));
     }
-    dispatch(removeItem({}))
   };
 
   const handleRemove = (item) => {
@@ -45,8 +44,8 @@ const CartItem = ({ onContinueShopping }) => {
 
   // Calculate total cost based on quantity for an item
   const calculateTotalCost = (item) => {
-    quantity = parseFloat(item.quantity);
-    cost = parseFloat(item.cost.substring(1));
+    let quantity = parseFloat(item.quantity);
+    let cost = parseFloat(item.cost.substring(1));
     return quantity * cost;
   };
 
